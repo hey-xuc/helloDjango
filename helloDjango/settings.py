@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'hrs',
 ]
 
 MIDDLEWARE = [
@@ -75,9 +76,21 @@ WSGI_APPLICATION = 'helloDjango.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        # 'django.db.backends.sqlite3'：SQLite嵌入式数据库。
+        # 'django.db.backends.postgresql'：BSD许可证下发行的开源关系型数据库产品。
+        # 'django.db.backends.mysql'：转手多次目前属于甲骨文公司的经济高效的数据库产品。
+        # 'django.db.backends.oracle'：甲骨文公司的关系型数据库旗舰产品
+        'NAME': 'hrs',
+        'HOST': '127.0.0.1',
+        'PORT': 3306,
+        'USER': 'root',
+        'PASSWORD': 'root',
     }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
 }
 
 
